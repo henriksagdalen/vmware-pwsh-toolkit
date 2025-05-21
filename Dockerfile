@@ -6,7 +6,12 @@ ENV POWERSHELL_TELEMETRY_OPTOUT=1 \
     # List of modules to install
     MODULES="VMware.PowerCLI \
             PowerVCF \
-            PowerValidatedSolutions"
+            PowerValidatedSolutions \
+            VMware.CloudFoundation.Reporting \
+            VMware.CloudFoundation.CertificateManagement \
+            VMware.CloudFoundation.LoggingManagement \
+            VMware.CloudFoundation.PasswordManagement \
+            VMware.CloudFoundation.PowerManagement"
 
 
 # Install modules
