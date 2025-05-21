@@ -2,17 +2,18 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0
 
 # Disable telemetry 
-ENV POWERSHELL_TELEMETRY_OPTOUT=1 \
-    # List the modules to install
-    MODULES="VMware.PowerCLI \
-            PowerVCF \
-            PowerValidatedSolutions \
-            VMware.CloudFoundation.Reporting \
-            VMware.CloudFoundation.CertificateManagement \
-            VMware.CloudFoundation.LoggingManagement \
-            VMware.CloudFoundation.PasswordManagement \
-            VMware.CloudFoundation.PowerManagement"
+ENV POWERSHELL_TELEMETRY_OPTOUT=1
 
+# List the modules to install
+ENV MODULES="\
+VMware.PowerCLI \
+PowerVCF \
+PowerValidatedSolutions \
+VMware.CloudFoundation.Reporting \
+VMware.CloudFoundation.CertificateManagement \
+VMware.CloudFoundation.LoggingManagement \
+VMware.CloudFoundation.PasswordManagement \
+VMware.CloudFoundation.PowerManagement"
 
 # Install modules
 RUN pwsh -Command "Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted"
