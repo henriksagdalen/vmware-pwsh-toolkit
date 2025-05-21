@@ -16,7 +16,7 @@ ENV POWERSHELL_TELEMETRY_OPTOUT=1 \
 
 # Install modules
 RUN pwsh -Command "Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted"
-RUN pwsh -Command "foreach (\$module in \$env:MODULES.Split(' ')){Install-Module -Name \$module -Scope CurrentUser -Force -AllowClobber}"
+RUN pwsh -Command "foreach (\$module in \$env:MODULES.Split(' ')){Install-Module -Name \$module -Scope CurrentUser -Force -AllowClobber | Out-Null}"
 
 # Set the default shell
 CMD ["pwsh"]
